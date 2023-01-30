@@ -39,3 +39,8 @@ background-image: linear-gradient(-45deg, #3209a3 0%, #e66109 25%, #eeb155 51%, 
   .form{
     display: block;
   }
+
+  #today{
+    border: 1px solid;
+    padding: 10px;
+  }
