@@ -113,6 +113,19 @@ background-image: linear-gradient(-45deg, #3209a3 0%, #e66109 25%, #eeb155 51%, 
     }
   }
 
+@media(max-width: 1248px){
+  h2 {
+    text-align: center;
+  }
+
+  .form-input, 
+  .btn, 
+  .btn-city{
+    width: 400px;
+    margin: 5px 20px;
+  }
+
+}
 
 
 
