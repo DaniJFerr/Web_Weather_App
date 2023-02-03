@@ -86,7 +86,7 @@ background-image: linear-gradient(-45deg, #3209a3 0%, #e66109 25%, #eeb155 51%, 
 }
 
 .forecastCard img{
-  width: 50px;
+  width: 10px;
 }
 
 @-webkit-keyframes AnimateBG {

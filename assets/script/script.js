@@ -42,7 +42,7 @@ function renderCurrentWeather(cityData) {
     </div>
     <div class="currentData">
       <p id="temperature">Temperature: ${cityData.main.temp} ºC</p>
-      <p id="wind">Wind speed: ${cityData.wind.speed} m/s</p>
+      <p id="wind">Wind speed: ${cityData.wind.speed} mph</p>
       <p id="humidity">Humidity: ${cityData.main.humidity}%</p>
     </div>
   `;
@@ -78,9 +78,8 @@ function renderFiveDayForecast(forecastData) {
   fiveDayForecast.appendChild(forecastHeader);
 
   const forecastDiv = document.createElement("div");
-  forecastDiv.classList.add("row", "justify-content-around");
+  forecastDiv.classList.add("row");
   fiveDayForecast.appendChild(forecastDiv);
-
 
   // A loop to push the data I need on my new object.
   for (let index = 0; index < Object.keys(fiveDaysData).length; index++) {
@@ -99,7 +98,7 @@ for (let index = 0; index < fiveDaysTemp.length; index++) {
   card.appendChild(date);
 
   let imgIcon = document.createElement("img");
-  imgIcon.src = `http://openweathermap.org/img/wn/${fiveDaysTemp[index].icon}@2x.png`;
+  imgIcon.src = `http://openweathermap.org/img/wn/${fiveDaysTemp[index].icon}@2x.png`,card;
 
   displayData(`Temp: ${fiveDaysTemp[index].temp} ºC`, card);
   displayData(`Wind: ${fiveDaysTemp[index].wind} mph`, card);
