@@ -68,7 +68,7 @@ function renderFiveDayForecast(forecastData) {
   const todayDate = moment();
   fiveDayForecast.innerHTML = "";
 
-  fiveDaysData(forecastData, fiveDaysData);
+  forecastFiveDaysData(forecastData, fiveDaysData);
 
   const forecastHeader = document.createElement("div");
   forecastHeader.innerHTML = `
@@ -107,9 +107,8 @@ for (let index = 0; index < fiveDaysTemp.length; index++) {
 }
 }
 
-// This code creates a function to store five days worth of data from a forecastData object, 
-//and another function to get the maximum temperature for a given day from the fiveDaysData object.
-function fiveDaysData(forecastData, fiveDaysData) {
+
+function forecastFiveDaysData(forecastData, fiveDaysData) {
   let todayDate = moment();
   for (let index = 0; index < forecastData.list.length; index++) {
     let days = forecastData.list[index].dt_txt;
