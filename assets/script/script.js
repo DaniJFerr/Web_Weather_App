@@ -60,14 +60,15 @@ async function fetchFiveDaysForecast(cityData) {
   });
 }
 
-// Function to render the weather forecast data of the searched city
+//This function renders a 5-day forecast based on the forecastData provided. 
+//It creates a forecastHeader, a forecastDiv, and five cards containing the date, temperature, wind speed, and humidity for each day.
 function renderFiveDayForecast(forecastData) {
   const fiveDaysData = {};
   const fiveDaysTemp = [];
   const todayDate = moment();
   fiveDayForecast.innerHTML = "";
 
-  FiveDaysData(forecastData, fiveDaysData);
+  fiveDaysData(forecastData, fiveDaysData);
 
   const forecastHeader = document.createElement("div");
   forecastHeader.innerHTML = `
@@ -81,13 +82,12 @@ function renderFiveDayForecast(forecastData) {
   forecastDiv.classList.add("row");
   fiveDayForecast.appendChild(forecastDiv);
 
-  // A loop to push the data I need on my new object.
   for (let index = 0; index < Object.keys(fiveDaysData).length; index++) {
     let day = Object.keys(fiveDaysData)[index];
     fiveDaysTemp.push(getTemp(day, fiveDaysData));
 }
 
-// A loop to create 5 cards with the weather data of the next 5 days.
+
 for (let index = 0; index < fiveDaysTemp.length; index++) {
   let card = document.createElement("div");
   card.classList.add("forecastCard", "col-sm-2");
@@ -107,7 +107,9 @@ for (let index = 0; index < fiveDaysTemp.length; index++) {
 }
 }
 
-function FiveDaysData(forecastData, fiveDaysData) {
+// This code creates a function to store five days worth of data from a forecastData object, 
+//and another function to get the maximum temperature for a given day from the fiveDaysData object.
+function fiveDaysData(forecastData, fiveDaysData) {
   let todayDate = moment();
   for (let index = 0; index < forecastData.list.length; index++) {
     let days = forecastData.list[index].dt_txt;
@@ -118,7 +120,7 @@ function FiveDaysData(forecastData, fiveDaysData) {
     let humidity = forecastData.list[index].main.humidity;
     let icon = forecastData.list[index].weather[0].icon;
 
-    // Ignore the data of today, because I don't need it.
+    
     if (formattedDays === todayDate.format("DD/MM/YYYY")) {
         continue;
     }
