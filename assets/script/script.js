@@ -101,6 +101,7 @@ for (let index = 0; index < fiveDaysTemp.length; index++) {
   imgIcon.src = `http://openweathermap.org/img/wn/${fiveDaysTemp[index].icon}@2x.png`, card;
   card.appendChild(imgIcon);
 
+  
   displayData(`Temp: ${fiveDaysTemp[index].temp} ºC`, card);
   displayData(`Wind: ${fiveDaysTemp[index].wind} mph`, card);
   displayData(`Humidity: ${fiveDaysTemp[index].humidity} %`, card);
